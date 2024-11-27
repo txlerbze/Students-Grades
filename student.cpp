@@ -5,8 +5,8 @@
 using namespace std;
 
 Students::Students(string studentFirstName, string studentLastName) {
-    firstName = studentFirstName;
-    lastName = studentLastName;
+    FName = studentFirstName;
+    LName = studentLastName;
 }
 
 void Students::addGrade(double grade) {
@@ -15,19 +15,18 @@ void Students::addGrade(double grade) {
 
 double Students::calculateAverage() {
     if (grades.empty()) {
-        return 0.0;
+        return 0;
+    } else {
+        double sum = 0;
+        for (double grade : grades) {
+            sum += grade;
+        }
+        return sum / grades.size(); 
     }
-
-    double sum = 0.0;
-    for (double grade : grades) {
-        sum += grade; 
-    }
-
-    return sum / grades.size(); 
 }
 
 void Students::printDetails() {
-    cout << "Student Name: " << firstName << " " << lastName << endl;
+    cout << "Student's Full Name: " << FName << " " << LName << endl;
     double average = calculateAverage();
-    cout << "Average Grade: " << fixed << setprecision(2) << average << endl;
+    cout << "The average grade the student got: " << average << endl;
 }
