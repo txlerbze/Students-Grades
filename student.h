@@ -11,7 +11,7 @@ public:
     void printDetails();
 
 private:
-    string firstName;
-    string lastName;
+    string FName;
+    string LName;
     vector<double> grades;
 };
