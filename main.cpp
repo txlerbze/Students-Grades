@@ -6,27 +6,29 @@ using namespace std;
 int main() {
     
     cout << "Enter the student's first name: ";
-    string firstName;
-    cin >> firstName;
+    string FName;
+    cin >> FName;
     
     cout << "Enter the student's last name: ";
-    string lastName;
-    cin >> lastName;
+    string LName;
+    cin >> LName;
 
-    Students student1(firstName, lastName);
+    Students studentInfo(FName, LName);
 
     cout << "Enter the number of grades to input: ";
-    int numGrades;
-    cin >> numGrades;
+    int numOfGrades;
+    cin >> numOfGrades;
 
-    for (int i = 0; i < numGrades; ++i) {
+    for (int i = 0; i < numOfGrades; ++i) {
         double grade;
         cout << "Enter grade " << (i + 1) << ": ";
         cin >> grade;
-        student1.addGrade(grade);
+        studentInfo.addGrade(grade);
     }
 
-    cout << endl << "Student Details:" << endl;
-    student1.printDetails();
+    cout << "\nStudent Details: ";
+    studentInfo.printDetails();
+    cout << endl;
+
     return 0;
 }
